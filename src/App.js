@@ -39,6 +39,7 @@ const App = () => {
     );
   
   
+  // Alternative to JSX using the react object
   // return React.createElement(
   //   'div', {},
   //     React.createElement('h2', {},),
