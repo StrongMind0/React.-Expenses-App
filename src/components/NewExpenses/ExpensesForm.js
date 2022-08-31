@@ -4,39 +4,48 @@ import './ExpensesForm.css';
 const ExpensesForm = () => {
 
     // Using multiple useState
-    // const [enteredTitle, setEnteredTitle] = useState('');
-    // const [enteredAmount, setEnteredAmount] = useState('')
-    // const [enteredDate, setEnteredDate] = useState('')
+    const [enteredTitle, setEnteredTitle] = useState('');
+    const [enteredAmount, setEnteredAmount] = useState('');
+    const [enteredDate, setEnteredDate] = useState('');
 
-// Using one useState
-    const [userInput, setUserInput] = useState({
-        enteredTitle: '',
-        enteredAmount: '',
-        enteredDate: '',
-    });
+// Using one useState for multiple state
+    // const [userInput, setUserInput] = useState({
+    //     enteredTitle: '',
+    //     enteredAmount: '',
+    //     enteredDate: '',
+    // });
     
     const titleChangeHandler = (event) => {
-        // setEnteredTitle(event.target.value)
-        setUserInput({
-            ...userInput,
-            enteredTitle: event.target.value,
-        });
+        setEnteredTitle(event.target.value)
+
+        // Using one state. The approach below is not the best approach for updating state depending on old state but it will work
+        // setUserInput({
+        //     ...userInput,
+        //     enteredTitle: event.target.value,
+        // });
+
+        //Using one state for multiple state: The approach below is the best when the state depends on the previous state we use the function below
+        // setUserInput((prevState) => {
+        //     return { ...prevState, enteredTitle: event.target.value, };
+        // });
     };
 
     const amountChangeHandler = (event) => {
-        // setEnteredAmount(event.target.value)
-        setUserInput({
-            ...userInput,
-            enteredAmount: event.target.value,
-        });
+        setEnteredAmount(event.target.value)
+
+        // setUserInput({
+        //     ...userInput,
+        //     enteredAmount: event.target.value,
+        // });
     };
 
     const dateChangeHandler = (event) => {
-        // setEnteredDate(event.target.value);
-        setUserInput({
-            ...userInput,
-            enteredDate: event.target.value,
-        });
+        setEnteredDate(event.target.value);
+
+        // setUserInput({
+        //     ...userInput,
+        //     enteredDate: event.target.value,
+        // });
     };
 
 
