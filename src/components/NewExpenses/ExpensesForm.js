@@ -57,6 +57,9 @@ const ExpensesForm = () => {
             date: new Date(enteredDate),
         }
         console.log(expenseData);
+        setEnteredTitle('');
+        setEnteredAmount('');
+        setEnteredDate('');
     }
 
 
@@ -78,6 +81,7 @@ const ExpensesForm = () => {
                         type='number'
                         min='0.01'
                         step='0.01'
+                        value={enteredAmount}
                         onChange={amountChangeHandler} />
                 </div>
                 <div className="new-expense__control">
@@ -86,6 +90,7 @@ const ExpensesForm = () => {
                         type='date'
                         min='2021-01-01'
                         max='2023-12-31'
+                        value={enteredDate}
                         onChange={dateChangeHandler} />
                 </div>
             </div>
