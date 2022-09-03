@@ -3,14 +3,13 @@ import React from 'react';
 import './Expenses.css'
 import ExpenseItem from "./ExpenseItem"
 import Card from '../UI/Card';
-import NewExpense from '../NewExpenses/NewExpense';
+// import NewExpense from '../NewExpenses/NewExpense';
 
 const Expense =(props)=> {
     const items = props.items;
 
     return (
        <div>
-          <NewExpense/>
           <Card className="expenses">
              <ExpenseItem
                 title={items[0].title}
