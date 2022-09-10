@@ -8,6 +8,7 @@ const ExpenseItem = (props) => {
     const title = props.title
     
     return (
+
         <Card className='expense-item'>
             <ExpenseDate date={props.date}/>
             <div className='expense-item__details'>
