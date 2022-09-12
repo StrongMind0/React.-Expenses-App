@@ -16,6 +16,19 @@ const Expenses =(props)=> {
    }
    )
 
+   let expensesContent = <p>No Expense Found</p>
+   if (filteredExpenses.length > 0) {
+      expensesContent = filteredExpenses.map((expense) => (
+                <ExpenseItem
+                  //  Always add key when mapping out list of data for react to identify(unique identifier) and arrange which one comes first
+                   key={expense.id}
+                   title={expense.title}
+                   amount={expense.amount}
+                   date={expense.date}
+                />
+             ))
+   }
+
 
     return (
        <div>
@@ -24,15 +37,7 @@ const Expenses =(props)=> {
                 selected={filteredYear}
                 onChangeFilter={filterChangeHandler}
              />
-             {filteredExpenses.map((expense) => (
-                <ExpenseItem
-                  //  Always add key when mapping out list of data for react to identify(unique identifier) and arrange which one comes first
-                   key={expense.id}
-                   title={expense.title}
-                   amount={expense.amount}
-                   date={expense.date}
-                />
-             ))}
+             {expensesContent}
            </Card>
        </div>
     );
