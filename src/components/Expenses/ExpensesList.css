@@ -1,0 +1,11 @@
+.expense-list__callback{
+    color: white;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.expense-list{
+    list-style: none;
+    padding: 0;
+}
