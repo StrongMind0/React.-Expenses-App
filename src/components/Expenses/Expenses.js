@@ -11,6 +11,11 @@ const Expenses =(props)=> {
    const filterChangeHandler = (selectedYear) => {
       setFilteredYear(selectedYear)
    }
+   const filteredExpenses = props.items.filter(expense => {
+   return expense.date.getFullYear().toString() === filteredYear;
+   }
+   )
+
 
     return (
        <div>
@@ -19,8 +24,9 @@ const Expenses =(props)=> {
                 selected={filteredYear}
                 onChangeFilter={filterChangeHandler}
              />
-             {props.items.map((expense) => (
+             {filteredExpenses.map((expense) => (
                 <ExpenseItem
+                  //  Always add key when mapping out list of data for react to identify(unique identifier) and arrange which one comes first
                    key={expense.id}
                    title={expense.title}
                    amount={expense.amount}
