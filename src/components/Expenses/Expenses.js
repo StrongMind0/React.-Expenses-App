@@ -31,5 +31,4 @@ const Expenses =(props)=> {
        </li>
     );
 }
-
 export default Expenses
